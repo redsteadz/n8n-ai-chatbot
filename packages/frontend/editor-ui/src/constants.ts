@@ -87,6 +87,7 @@ export const WORKFLOW_EXTRACTION_NAME_MODAL_KEY = 'workflowExtractionName';
 export const WHATS_NEW_MODAL_KEY = 'whatsNew';
 export const WORKFLOW_DIFF_MODAL_KEY = 'workflowDiff';
 export const EXPERIMENT_TEMPLATE_RECO_V2_KEY = 'templateRecoV2';
+export const FLOWISE_CHATBOT_MODAL_KEY = 'flowiseChatbot';
 
 export const COMMUNITY_PACKAGE_MANAGE_ACTIONS = {
 	UNINSTALL: 'uninstall',

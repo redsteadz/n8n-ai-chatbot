@@ -3413,5 +3413,6 @@
 	"workflowDiff.deletedWorkflow.remote": "The workflow doesn't exist on remote",
 	"workflowDiff.newWorkflow": "New workflow",
 	"workflowDiff.newWorkflow.database": "The workflow will be created in the database",
-	"workflowDiff.newWorkflow.remote": "The workflow will be created on remote"
+	"workflowDiff.newWorkflow.remote": "The workflow will be created on remote",
+	"flowiseChatbot.title": "AI Assistant Chat"
 }

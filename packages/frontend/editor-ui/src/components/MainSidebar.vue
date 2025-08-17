@@ -6,7 +6,13 @@ import { onClickOutside, type VueInstance } from '@vueuse/core';
 import { useI18n } from '@n8n/i18n';
 import { N8nNavigationDropdown, N8nTooltip, N8nLink, N8nIconButton } from '@n8n/design-system';
 import type { IMenuItem } from '@n8n/design-system';
-import { ABOUT_MODAL_KEY, RELEASE_NOTES_URL, VIEWS, WHATS_NEW_MODAL_KEY } from '@/constants';
+import {
+	ABOUT_MODAL_KEY,
+	RELEASE_NOTES_URL,
+	VIEWS,
+	WHATS_NEW_MODAL_KEY,
+	FLOWISE_CHATBOT_MODAL_KEY,
+} from '@/constants';
 import { hasPermission } from '@/utils/rbac/permissions';
 import { useCloudPlanStore } from '@/stores/cloudPlan.store';
 import { useRootStore } from '@n8n/stores/useRootStore';
@@ -112,6 +118,12 @@ const mainMenuItems = computed<IMenuItem[]>(() => [
 		label: i18n.baseText('mainSidebar.variables'),
 		position: 'bottom',
 		route: { to: { name: VIEWS.VARIABLES } },
+	},
+	{
+		id: 'flowise-chatbot',
+		icon: 'messages-square',
+		label: 'AI Chat',
+		position: 'bottom',
 	},
 	{
 		id: 'insights',
@@ -311,6 +323,11 @@ const handleSelect = (key: string) => {
 		}
 		case 'insights':
 			telemetry.track('User clicked insights link from side menu');
+			break;
+		case 'flowise-chatbot': {
+			uiStore.openModal(FLOWISE_CHATBOT_MODAL_KEY);
+			break;
+		}
 		default:
 			if (key.startsWith('whats-new-article-')) {
 				const articleId = Number(key.replace('whats-new-article-', ''));

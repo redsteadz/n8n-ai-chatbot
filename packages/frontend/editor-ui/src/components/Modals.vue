@@ -42,6 +42,7 @@ import {
 	WORKFLOW_SETTINGS_MODAL_KEY,
 	WORKFLOW_SHARE_MODAL_KEY,
 	EXPERIMENT_TEMPLATE_RECO_V2_KEY,
+	FLOWISE_CHATBOT_MODAL_KEY,
 } from '@/constants';
 
 import AboutModal from '@/components/AboutModal.vue';
@@ -85,6 +86,7 @@ import type { EventBus } from '@n8n/utils/event-bus';
 import PromptMfaCodeModal from './PromptMfaCodeModal/PromptMfaCodeModal.vue';
 import DynamicModalLoader from './DynamicModalLoader.vue';
 import NodeRecommendationModal from '@/experiments/templateRecoV2/components/NodeRecommendationModal.vue';
+import FlowiseChatbotModal from '@/components/FlowiseChatbotModal.vue';
 </script>
 
 <template>
@@ -347,6 +349,12 @@ import NodeRecommendationModal from '@/experiments/templateRecoV2/components/Nod
 		<ModalRoot :name="EXPERIMENT_TEMPLATE_RECO_V2_KEY">
 			<template #default="{ modalName, data }">
 				<NodeRecommendationModal :modal-name="modalName" :data="data" />
+			</template>
+		</ModalRoot>
+
+		<ModalRoot :name="FLOWISE_CHATBOT_MODAL_KEY">
+			<template #default="{ modalName, data }">
+				<FlowiseChatbotModal :modal-name="modalName" :data="data" />
 			</template>
 		</ModalRoot>
 
